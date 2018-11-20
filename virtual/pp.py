@@ -5,6 +5,7 @@ app = Flask(__name__)
 def hola():
     nombre = 'Jose'
     apellido = 'Apablaza'
+    lol = ':: and it is working ::'
     return render_template('hola.html', **locals())
 
 
