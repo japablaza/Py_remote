@@ -70,9 +70,19 @@ def hola():
 
 @app.route('/weather')
 def weather():
-    temp1 = current_temp
+    all_data = [current_temp,
+                temp_min,
+                temp_max,
+                current_time_local,
+                city_search,
+                lon_search,
+                lat_search,
+                ]
     return render_template('clima.html', ** locals())
 
+# @app.route('/weather/<ciudad>')
+# def weather(ciudad):
+#     pass #create this function
 
 if __name__ == '__main__':
     app.run()
