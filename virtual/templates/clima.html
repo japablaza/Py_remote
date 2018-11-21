@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>This is another flask website</title>
+  </head>
+  <body>
+    <h1>Hola Mundo!</h1>
+    <li>
+      <ol>
+        {% if temp1 >= 30 %}
+          <p>The Temperature is pretty low: {{ temp1 }}</p>
+        {% else %}
+          <p>The temperature is ok for a beer: {{ temp1 }}</p>
+        {% endif %}
+      </ol>
+    </li>
+  </body>
+</html>

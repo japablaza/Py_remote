@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hola desde Flask</title>
+  </head>
+  <body>
+    {% if nombre %}
+      <h1>Hola {{ nombre }} {{ apellido }}</h1>
+    {% elif lol %}
+      <h1>This is a test {{ lol }}</h1>
+    {% else %}
+      <h1>Hola, {{ nombre }} {{ apellido }}</h1>
+    {% endif %}
+
+    <h2>This is a test outside the IF {{ nombre }}</h2>
+
+
+  </body>
+</html>
