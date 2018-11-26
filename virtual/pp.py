@@ -80,9 +80,5 @@ def weather():
                 ]
     return render_template('clima.html', ** locals())
 
-# @app.route('/weather/<ciudad>')
-# def weather(ciudad):
-#     pass #create this function
-
 if __name__ == '__main__':
     app.run()
