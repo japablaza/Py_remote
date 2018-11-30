@@ -14,8 +14,8 @@ def hola():
 
 @app.route('/test_dict')
 def testing():
-    city_dict = city_func('Chicago', 'US')
-    return render_template('test_dict.html, **city_dict')
+    city_dict = city_func('Chicago', 'US')['id']
+    return render_template('test_dict.html', **locals())
 
 @app.route('/weather')
 def weather():
@@ -27,7 +27,15 @@ def weather():
                 lon_search,
                 lat_search,
                 ]
-    return render_template('clima.html', ** locals())
+    return render_template('weather.html', ** locals())
 
-if __name__ == '__main__':
-    app.run()
+@app.route('/clima')
+def clima():
+    clima_dict = api_call_func_to_JSON('New York', 'US')
+    return render_template('clima.html', **locals())
+
+print(type(clima))
+print('hola mundo')
+#
+# if __name__ == '__main__':
+#     app.run()
