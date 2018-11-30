@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>This is another flask website</title>
-  </head>
-  <body>
-    <h1>Hola amigo. Below you can find more information about {{ all_data[4] }}!</h1>
-    <div class="ciudad">
-    <li>
-      <ul>
-        <p>La temperatura actual en {{ all_data[4] }}: {{ all_data[0] }}</p>
-        <p>En el mapa: Longitud: {{ all_data[5] }}, Latitud: {{ all_data[6] }}</p>
-        <p>Hora en local de {{ all_data[4] }}: {{ all_data[3] }}</p>
-        <p>Temperatura minima: {{ all_data[1] }}</p>
-        <p>Temperatura minima: {{ all_data[2] }}</p>
-      </ul>
-    </li>
-    </div>
-    <div class="">
-      {% if all_data[0] <= 69 %}
-        <p>You better get a hot coffee <img src="{{url_for('static', filename='coffee-cup.png')}}" /></p>
-      {% else %}
-        <p>Nice and fresh, beer? <img src="{{url_for('static', filename='beer.png')}}" /></p>
-      {% endif %}
-    </div>
-    <div>Icons made by <a href="https://www.flaticon.com/authors/smalllikeart" title="smalllikeart">smalllikeart</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-  </body>
+<html>
+<title>ChiPy Mentorship Program Guide - Fall 2018</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url({{url_for('static', filename='malte-schmidt-474904-unsplash.jpg')}});
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    Logo
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top">Welcome to {{ clima_dict['name'] }}</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">The temperature: {{ clima_dict['main']['temp'] }} degrees Fahrenheit</p>
+  </div>
+  <div class="w3-display-bottomleft w3-padding-large">
+    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+  </div>
+</div>
+
+</body>
 </html>
