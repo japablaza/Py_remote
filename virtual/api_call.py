@@ -13,13 +13,13 @@ with open ('city.list.json') as file:
     lista =json.load(file) # This is almost 29MB file
 
 # Simple way to get the city ID from JSON file
-lista_simple = lista[22]
-id_simple = lista_simple.get('id')
-country_simple = lista_simple.get('country')
-city_simple = lista_simple.get('name')
-coord_simple = lista_simple.get('coord')
-lon_simple = coord_simple.get('lon')
-lat_simple = coord_simple.get('lat')
+# lista_simple = lista[22]
+# id_simple = lista_simple.get('id')
+# country_simple = lista_simple.get('country')
+# city_simple = lista_simple.get('name')
+# coord_simple = lista_simple.get('coord')
+# lon_simple = coord_simple.get('lon')
+# lat_simple = coord_simple.get('lat')
 
 # Old way to loop inside the JSON file. Nov 25, 2018
 # for N in range(0, len(lista) -1):
@@ -39,7 +39,6 @@ def city_func(city_func, country_func):
                 if dict_in['country'] == country_func:
                     return dict_in
 
-print(city_func('Chicago', 'US')['id'])
 # Building the Endpoint URL API for N city
 # http://api.openweathermap.org/data/2.5/weather?id=2951825&units=metric&appid=7a2d438e1e09ea12a9d4c1a12ff46f58
 # url_epm: For temperature in Celsius use units=metric
@@ -57,14 +56,16 @@ def api_call_func(city, country):
 
 # Get the response from the API endpoint
 
-city_api = requests.get(api_call_func('Chicago', 'US')) # requests.models.Response
-city_data = city_api.json() # dict
+def api_call_func_to_JSON(city, country):
+    city_api = requests.get(api_call_func(city, country)) # requests.models.Response
+    city_data = city_api.json() # dict
+    return city_data
 
-current_temp = city_data['main']['temp']
-temp_min = city_data['main']['temp_min']
-temp_max = city_data['main']['temp_max']
-current_time_epoch = city_data['dt']
-current_time_local = datetime.datetime.fromtimestamp(current_time_epoch)#.strftime('%a, %d %b %Y %H:%M:%S')
+# current_temp = city_data['main']['temp']
+# temp_min = city_data['main']['temp_min']
+# temp_max = city_data['main']['temp_max']
+# current_time_epoch = city_data['dt']
+# current_time_local = datetime.datetime.fromtimestamp(current_time_epoch)#.strftime('%a, %d %b %Y %H:%M:%S')
 
 # The print section
 # print('Information from City: ' + city_search + ', Country: ' + country_search)
