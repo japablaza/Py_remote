@@ -77,3 +77,19 @@ def api_call_func_to_JSON(city, country):
 # print('Current time: ' + str(current_time_local))
 # print('Temperature minima: ' + str(temp_min))
 # print('Temperature maxima: ' + str(temp_max))
+
+# Adding free photos api endpoint functions
+
+PIXABAY_KEY = os.environ.get('OPEN_PIXABAY')
+
+def photos(city):
+    url_pixabay = 'https://pixabay.com/api/?key='
+    url_pixabay_key = str(PIXABAY_KEY)
+    url_pixabay_city = '&q=' + city + '+city&image_type=photo&pretty=true'
+    url_photos = url_pixabay + url_pixabay_key + url_pixabay_city
+    return url_photos
+
+def photos_jason(city):
+    photos_api = requests.get(photos(city))
+    photos_data = photos_api.json()
+    return photos_data

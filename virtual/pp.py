@@ -32,10 +32,9 @@ def weather():
 @app.route('/clima')
 def clima():
     clima_dict = api_call_func_to_JSON('New York', 'US')
+    foto_link = type(photos_jason('Chicago'))
     return render_template('clima.html', **locals())
 
-print(type(clima))
-print('hola mundo')
 #
 # if __name__ == '__main__':
 #     app.run()
