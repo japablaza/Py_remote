@@ -67,7 +67,10 @@ def photos_jason(city):
     return photos_data
 
 def random_photo(city):
-    # totalHits = photos_jason(city)['totalHits']
-    numR = random.randint(0,15)
-    random_foto = photos_jason(city)['hits'][numR]['largeImageURL']
+    photo_list = photos_jason(city)['hits']
+    list_len = len(photo_list)
+    numR = random.randint(0,list_len)
+    random_foto = photo_list[numR]['largeImageURL']
     return random_foto
+# 
+# print(random_photo('Chicago'))
