@@ -17,8 +17,10 @@ def testing():
     city_dict = city_func('Chicago', 'US')['id']
     return render_template('test_dict.html', **locals())
 
+# @app.route('/clima/<city>', defaults={'city': 'Chicago'}) #Trying to assign a default city
 @app.route('/clima/<city>')
 def clima(city=None):
+    city = city.title()
     clima_dict = api_call_func_to_JSON(city, 'US')
     foto_link = random_photo(city)
     return render_template('clima.html', **locals())
