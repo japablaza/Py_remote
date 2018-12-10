@@ -7,8 +7,8 @@ import  subprocess
 # client_id=AHEGEA3GLJIRXUBTHGCJSBZUGSNHBQMP4YUM1Z4HSJFYFDDP&
 # client_secret=AYUTF5UIHM2CNLTXDQE0WBFMTXPBKYIKYC03GRIIUJR0MOR2&v=20181209
 
-store_date = subprocess.check_output(['date', '+%Y%m%d'])
-current_date = store_date.decode('utf-8').rstrip()
+byte_current_date = subprocess.check_output(['date', '+%Y%m%d'])
+current_date = byte_current_date.decode('utf-8').rstrip()
 
 SQUARE_ID = os.environ.get('OPEN_4SQUARE_ID')
 SQUARE_SEC = os.environ.get('OPEN_4SQUARE_SECRET')

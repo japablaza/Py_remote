@@ -50,7 +50,7 @@ def api_call_func_to_JSON(city, country):
 # current_time_epoch = city_data['dt']
 # current_time_local = datetime.datetime.fromtimestamp(current_time_epoch)#.strftime('%a, %d %b %Y %H:%M:%S')
 
-# Adding free photos api endpoint functions
+# Adding free photos api endpoint functions. 
 
 PIXABAY_KEY = os.environ.get('OPEN_PIXABAY')
 
