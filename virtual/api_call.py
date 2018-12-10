@@ -72,5 +72,3 @@ def random_photo(city):
     numR = random.randint(0,list_len)
     random_foto = photo_list[numR]['largeImageURL']
     return random_foto
-# 
-# print(random_photo('Chicago'))
